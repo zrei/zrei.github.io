@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Gory Dicing Guardians</title>
+		<title>REPLACE</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../../assets/css/main.css" />
@@ -49,32 +49,28 @@
                             <div class="container">
                                 <header class="major">
                                     <ul class="actions">
-                                        <li><a href="../../index.html#gory-dicing-guardians" class="button alt">Back</a></li>
+                                        <li><a href="../../index.html#REPLACE" class="button alt">Back</a></li>
                                     </ul>
-                                    <h2>Gory Dicing Guardians</h2>
+                                    <h2>Game Title</h2>
                                     <ul class="icons">
-                                        <li><a href="https://domokunx.itch.io/gory-dicing-guardians" class="icon solid fa-gamepad"><span class="label">itch.io</span></a></li>
-                                        <li><a href="https://github.com/zrei/week5gamejam2023" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                                        <li><a href="REPLACE" class="icon solid fa-gamepad"><span class="label">itch.io</span></a></li>
+                                        <li><a href="REPLACE" class="icon brands fa-github"><span class="label">Github</span></a></li>
                                     </ul>
                                     <div class="row">
                                         <div class="col-6">
-                                            <a class="image"><img width=100% height=auto src="gdgInGame.png" alt="" /></a>
+                                            <a class="image"><img width=100% height=auto src="REPLACE" alt="" /></a>
                                         </div>
                                     </div>
                                 </header>
                                 <div class="game-main">
-                                    <p>Gory Dicing Guardians (GDG) is a tower defence game where the player protects a cake against an endless horde of ants. Players can use their cursor to draw squares around ants to defeat them, but the cursor takes damage upon coming into contact with ants.</p>
-                                            
-                                    <p>GDG was a game developed for a 9-hour game jam hosted by my university's game development group. It was developed with a team in Unity.</p>
+                                    <p>REPLACE</p>
                                         
                                     <p>I was responsible for:</p>
                                     <ul>
-                                        <li>Square drawing logic</li>
-                                        <li>Calculating whether ants are within the drawn square</li>
-                                        <li>Mouse logic</li>
+                                        <li>REPLACE</li>
                                     </ul>
 
-                                    <p>This involved working with a lot of math, and it was a ton of fun!</p>
+                                    <p>REPLACE</p>
                                 </div>			
                             </div>
                         </section>
