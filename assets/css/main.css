@@ -3332,3 +3332,26 @@ input, select, textarea {
 		.box footer ul.actions {
 			margin-bottom: 0;
 		}
+
+/* Boxes main*/
+#box-main {
+	position: relative;
+	background: #f7f7f7 url("images/bg02.png");
+	padding: 4em 0 4em 0;
+}
+
+	#box-main:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background: url("images/bg01.png");
+		background-size: 100% 100%;
+		z-index: 0;
+		opacity: 0.1;
+	}
+
+	#box-main .major h2 {
+		background: #f7f7f7 url("images/bg02.png");
+	}
