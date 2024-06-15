@@ -2813,6 +2813,17 @@ input, select, textarea {
 						border-top: 0;
 					}
 
+	.header article .image {
+		display: inline-block;
+		padding-right: 2.5em;
+		vertical-align: middle;
+		width: 48%;
+	}
+
+		.header article .image img {
+			display: block;
+			width: 100%;
+		}
 /* Wrapper */
 
 	#wrapper {
