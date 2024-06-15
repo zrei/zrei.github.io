@@ -2187,6 +2187,15 @@ input, select, textarea {
 				border-radius: 0;
 			}
 
+		.image.major {
+			display: inline-block;
+			padding-right: 2.5em;
+			vertical-align: middle;
+			width: 48%;
+		}
+			.image.major img {
+				border-radius: 0;
+			}
 /* List */
 
 	ol {
