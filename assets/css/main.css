@@ -3375,3 +3375,7 @@ input, select, textarea {
 	#box-main .major h2 {
 		background: #f7f7f7 url("images/bg02.png");
 	}
+
+#game-main {
+	font-weight: 100px;
+}
