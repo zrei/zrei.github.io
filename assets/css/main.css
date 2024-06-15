@@ -244,6 +244,16 @@ input, select, textarea {
 		box-sizing: border-box;
 		align-items: stretch;
 	}
+		
+		.row image {
+			display: inline-block;
+			padding-right: 2.5em;
+			vertical-align: middle;
+			width: 48%;
+		}
+			.row image img {
+				border-radius: 0;
+			}
 
 		.row > * {
 			box-sizing: border-box;
