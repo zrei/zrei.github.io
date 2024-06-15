@@ -1988,27 +1988,6 @@ input, select, textarea {
 		opacity: 1.0;
 	}
 
-/* Box */
-
-	.box {
-		border-radius: 5px;
-		border: solid 2px #e4e4e4;
-		margin-bottom: 2.25em;
-		padding: 1.5em;
-	}
-
-		.box > :last-child,
-		.box > :last-child > :last-child,
-		.box > :last-child > :last-child > :last-child {
-			margin-bottom: 0;
-		}
-
-		.box.alt {
-			border: 0;
-			border-radius: 0;
-			padding: 0;
-		}
-
 /* Icon */
 
 	.icon {
@@ -3318,3 +3297,38 @@ input, select, textarea {
 	p + ul {
 		margin-top: -10px;
 	}
+
+	/* Box */
+
+	.box {
+		background: #ffffff;
+		border-bottom: solid 1px #ccc;
+		padding: 2.75em 1.75em 2.75em 1.75em;
+	}
+
+		.box .image.featured {
+			position: relative;
+			width: auto;
+			left: 1.75em;
+			top: 1.75em;
+			margin: -4.5em 0 4.25em -3.5em;
+		}
+
+		.box.post header {
+			padding-top: 1em;
+			margin: 0 0 2em 0;
+		}
+
+		.box.post h2 {
+			font-size: 2.5em;
+			letter-spacing: -0.015em;
+		}
+
+		.box.post header > p {
+			margin-top: 1.25em;
+			font-size: 1.25em;
+		}
+
+		.box footer ul.actions {
+			margin-bottom: 0;
+		}
