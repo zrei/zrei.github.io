@@ -76,42 +76,47 @@
                                     </div>
                                 </header>
                                 <div class="game-main">
-                                    <p>Rapture is a turn-based RPG with a focus on grid-based positioning and mechanics, developed in Unity with a team. It started as a project for a university module, but I and the rest of the team decided to continue working on it even after the module ended. It has been submitted to GDWC under the student project category.</p>
-                                        
-                                    <p>I was responsible for the battle system:</p>
+                                    <p>Rapture is a tactical role-playing game with a focus on grid-based positioning and an engaging narrative. You can play the game <a href="https://zrei-iii.itch.io/rapture">here</a>.</p>
+
+                                    <p>The game was developed in Unity 3D and C#. It started as a project for a university game development module, but I and the rest of the team decided to continue working on it even after the module ended. It has been submitted to GDWC winter 2024 under the student project category.</p>
+
+                                    <p>I was part of a team of five as one of three programmers, and I was primarily in charge of the battle system. Having never worked on a turn-based system before, it was initially difficult to come up with a design as there were many requirements and moving parts. I broke down the requirements of the system and grouped them to build the system from the ground up using smaller, modular parts. This was also an extremely data-heavy game project. Extra consideration had to be given to the ease of accessing and editing data by the designers, which became a design challenge when considering the structures used to store the data. The cleanest design did not necessarily lend itself to easy data entry, and I consulted frequently with the designers to tweak the interface.</p>
+
+                                    <p>While working on this project, I was also completing a six-month client game programmer internship. This was a lesson in time management, and I had to juggle my responsibilities carefully to ensure I was pulling my weight for this project. I stuck to a strict schedule and worked on this project for an hour before work and for a few hours after work every day.</p>
+
+                                    <p>Implementation of the battle system:</p>
                                     <ul>
                                         <li>Turn-based system, including calculation and tracking of turn order</li>
-                                        <li>Enemy AI (utilises a decision tree implemented in C#)</li>
-                                        <li>Player control - allowing the player to select skills, tiles, etc.</li>
-                                        <li>Tracking and representing unit data in battle, including status effects and skill cooldowns</li>
-                                        <li>Implementing the effects of various skills and their interactions with units</li>
-                                        <li>Data representation for skills, status effects, battles etc. that can be edited by designers</li>
-                                    </ul>
-                                    
-                                    <p>I was also responsible for the implementation of the world map:</p>
-                                    <ul>
-                                        <li>Handling of level nodes based on progress</li>
-                                        <li>Implementation of cutscenes in the world map</li>
-                                        <li>Level unlock animation</li>
+                                        <li>Enemy AI - utilises a decision tree implemented in C#</li>
+                                        <li>Player control during a turn - allowing the player to select skills, tiles, etc. while tracking the state of the player's turn and responding appropriately</li>
+                                        <li>Unit data representation as a data structure and tracking it in battle, including status effects and skill cooldowns</li>
+                                        <li>Implementing different skill effects and their interactions with units</li>
+                                        <li>Data representation for skills, status effects, battles etc. as scriptable objects that designers could modify</li>
                                     </ul>
 
-                                    <p>Some editor tools I created:</p>
+                                    <p>Implementation of the world map:</p>
+                                    <ul>
+                                        <li>Handling of level nodes based on progress</li>
+                                        <li>Implementation of cutscenes in the world map with cutscene triggers that can be used to control what happens during a cutscene</li>
+                                        <li>Level unlock animation using splines</li>
+                                    </ul>
+
+                                    <p>Implementation of editor tools:</p>
                                     <uL>
                                         <li>A tool to check the validity of data e.g. looking for repeated IDs and replacing them with unique ones</li>
-                                        <li>A tool to easily navigate between the different scenes and easily load the game from the menu</li>
-                                        <li>A tool to help setup battle data</li>
+                                        <li>A tool to easily navigate between the different scenes in the editor and easily load the game from the menu, or specific level and battle scenes</li>
+                                        <li>A tool to help setup battle data, character data etc. by automating certain fields</li>
                                     </uL>
 
                                     <p>Other things I was responsible for:</p>
                                     <ul>
-                                        <li>Save management</li>
-                                        <li>Implementation of tutorial system</li>
+                                        <li>Save management - game is saved at fixed points in the gameplay loop</li>
+                                        <li>Implementation of tutorial system that shows up the first time a player accesses a feature</li>
+                                        <li>Narrative flags</li>
                                         <li>Some UI screens such as the party select screen</li>
                                     </ul>
 
-                                    <p>This was an extremely data-heavy game project. Extra consideration had to be given to the ease of accessing and editing data by the designer, which became a design challenge when considering the structures used to store the data. The cleanest design did not necessarily lend itself to easy data entry.</p>
-
-                                    <p>I was also completing my six-month UI game programmer internship while working on this game while it was still a graded school project, so it was a lesson in time management.</p>
+                                    <p>Overall, I'm very proud of this project and how well the entire team worked together, and I consider this my most polished game project. We could have done better with the prioritisation of our features - we did not have a tutorial in-game when we presented the game at the school fair, which made the complex mechanics hard to pick up. We fixed this for the final submission to GDWC.</p>
                                 </div>			
                             </div>
                         </section>
