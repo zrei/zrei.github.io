@@ -61,23 +61,12 @@
                         </ul>
                         <div class="row">
                             <div class="col-6">
-                                <a class="image"><img width=100% height=auto src="coverImage.png" alt="" /></a>
-                            </div>
-                            <div class="col-6">
-                                <a class="image"><img width=100% height=auto src="MovementController.gif" alt="" /></a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <a class="image"><img width=100% height=auto src="TurnInPlace.gif" alt="" /></a>
-                            </div>
-                            <div class="col-6">
-                                <a class="image"><img width=100% height=auto src="RopeSwingGif.gif" alt="" /></a>
+                                <a class="image"><img width=100% height=auto src="coverImage2.png" alt="" /></a>
                             </div>
                         </div>
                     </header>
                     <div class="game-main">
-                        <p>This is an exploratory Unreal 5 project developed in C++ to explore the 3Cs (character, camera, control) and animation under the guidance of a mentor from Ubisoft Singapore. You can download the demo <a href="https://github.com/zrei/3cs-project/releases">here</a>, and view my presentation slides on the development process <a href="https://docs.google.com/presentation/d/1xOTWYoE_cMCdHoGpPuksX90KyHhy5kmjlcAGRDE-8DM/edit?usp=sharing">here</a>.</p>
+                        <p>This is an exploratory Unreal 5 project developed in C++ to explore the 3Cs (character, camera, control) and animation under the guidance of a mentor from Ubisoft Singapore. You can download the demo <a href="https://zrei-iii.itch.io/3d-movement-and-animation-demo">here</a>, and view my presentation slides on the development process <a href="https://docs.google.com/presentation/d/1xOTWYoE_cMCdHoGpPuksX90KyHhy5kmjlcAGRDE-8DM/edit?usp=sharing">here</a>.</p>
 
                         <p>Below are the main features I've implemented, including basic third-person character and camera control, turn in place, and feet inverse kinematics.</p>
 
@@ -91,12 +80,24 @@
                             <li>Different parameters set through data assets</li>
                         </ul>
 
+                        <div class="row">
+                            <div class="col-6">
+                                <a class="image"><img width=100% height=auto src="MovementController.gif" alt="" /></a>
+                            </div>
+                        </div>
+
                         <p>Turn in place:</p>
                         <ul>
                             <li>Initially implemented in a state machine in the animation graph that responds to the character state, but this made the animation hard to control and combine with other animations</li>
                             <li>In the end, I used slots to dynamically insert the turn animation from the character class - this gave me much more control over when and how the turn animation plays and how to blend it with other animations</li>
                             <li>Actual character rotation is driven by the rotation value curve on the turn animation for a more natural feel</li>
                         </ul>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <a class="image"><img width=100% height=auto src="TurnInPlace.gif" alt="" /></a>
+                            </div>
+                        </div>
 
                         <p>Feet IK:</p>
                         <ul>
@@ -112,8 +113,14 @@
                             <li>Visual desync is an issue as the character's grip is separate from its attach point, which can cause the hands to leave the rope since the bones no longer line up. Tried to solve this with manual hand bone placements but ran out of time to make it work.</li>
                         </ul>
 
+                        <div class="row">
+                            <div class="col-6">
+                                <a class="image"><img width=100% height=auto src="RopeSwingGif.gif" alt="" /></a>
+                            </div>
+                        </div>
+
                         <p>This was my first time developing in Unreal using C++, so the learning curve was steep, especially since I hadn't delved too deeply into the engine even in previous projects. I purposely picked the 3Cs as the main focus of this project as it is a vital component of most games, and it forces me out of my comfort zone.</p>
-                        
+
                         <p>Greatest takeaways:</p>
                         <ul>
                             <li>Animation system - different nodes in the animation blueprint together with general principles and considerations, even outside of Unreal</li>
@@ -123,7 +130,7 @@
 
                         <p>The process of developing this project was highly challenging. But it has been extremely rewarding, giving me the opportunity to deepen my understanding of Unreal and how it works under the hood. It has also allowed me to obtain insight from a professional in the industry. Big thank you to my mentor for giving me feedback on my C++, coding practices, and implementation ideas, as well as providing various resources and advice.</p>
                     </div>
-                </div>
+                    </div>
             </section>
         </div>
 
