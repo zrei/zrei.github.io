@@ -116,7 +116,7 @@ protected:
 };
                                     </code></pre>
 
-                                    <p>The online tasks are written in C++, since Unreal does not expose global leaderboard reading to blueprints. The online task queue system itself is created in blueprints as it is not very complicated - tasks can be submitted to be queued, which returns a guid. Once the task fires off its completed delegate, it is removed from the queue and the next task is dequeued and started. The guid can be used to cancel any task in the queue that has not yet been started.</p>
+                                    <p>The online tasks are written in C++ and interfaces with the Online Subsystem, since Unreal does not expose global leaderboard reading to blueprints. The online task queue system itself is created in blueprints as it is not very complicated - tasks can be submitted to be queued, which returns a guid. Once the task fires off its completed delegate, it is removed from the queue and the next task is dequeued and started. The guid can be used to cancel any task in the queue that has not yet been started.</p>
 
                                     <p>A task queue that uses delegates to handle the queue was chosen over an async implementation (which Unreal's leaderboard blueprint nodes use) as async tasks run on Unreal's game thread and will not progress while the game is paused. Since leaderboard reads and writes are performed primarily while UI is open, it needs to be able to progress while the game thread is paused.</p>
                                     
