@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Stoma Sim</title>
+		<title>Altered Blood+</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../../assets/css/main.css" />
@@ -27,6 +27,7 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="../../index.html#one">About</a></li>
+                        <li><a href="">Professional Projects</a></li>
 						<li><a href="../../index.html#two">Game Projects</a></li>
 						<li><a href="../../index.html#three">Other Projects</a></li>
 						<li><a href="../../index.html#four">Contact</a></li>
@@ -54,7 +55,7 @@
                                     <ul class="actions">
                                         <li><a href="../../index.html#stomaSim" class="button alt">Back</a></li>
                                     </ul>
-                                    <h2>StomaSim</h2>
+                                    <h2>Altered Blood+</h2>
                                     <ul class="icons">
                                         <li><a href="https://zrei-iii.itch.io/stomasim" class="icon solid fa-gamepad"><span class="label">itch.io</span></a></li>
                                         <li><a href="https://github.com/zrei/cs4240-project" class="icon brands fa-github"><span class="label">Github</span></a></li>
@@ -69,28 +70,57 @@
                                     </div>
                                 </header>
                                 <div class="game-main">
-                                    <p>StomaSim is a VR simulation experience that aims to educate patients of upcoming colonoscopy surgeries on what it's like to live life with a stoma bag. This is done by simulating the experience of changing one's stoma bag. You can experience the simulation <a href="https://zrei-iii.itch.io/stomasim">here</a>.</p>
+                                    <p>A boomer shooter with fast-paced FPS gameplay, developed in UE5 as my second project working at TrueWorld Studios.</p>
 
-                                    <p>This was my first VR project. As such, it was a great learning experience on how to utilise an engine like Unity to create VR experiences and what additional things need to be considered such as VR sickness. It also gave me a crash course on the common frameworks utilised to make VR development easier, such as OpenXR. As one of the two developers working on this project, I learned a lot.</p>
-                                    
+                                    <p>One major system I worked on was an online task queue that handles online leaderboard related requests and can be extended to handle online achievements. Each online task is encapsulated in a <code>UObject</code> that inherits from a base task that provides functionality for executing the task and being managed in the queue system.</p>
+                                                                            
                                     <pre><code class="language-cpp">
-UCLASS()
-class TestClass : public OtherTest
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FS1_OnlineTaskComplete);
+
+UCLASS(Abstract)
+class ALTEREDBLOOD_API US1_BaseOnlineTask : public UWorldObject
 {
-    protected:
-        UPROPERTY()
-        float LerpTime;
+	GENERATED_BODY()
+
+public:
+
+	UFUNCTION(BlueprintCallable)
+	virtual void StartTask() PURE_VIRTUAL(US1_BaseOnlineTask::StartTask, );
+
+    // for the queue to know when the currently executing task is complete
+	UPROPERTY(BlueprintAssignable)
+	FS1_OnlineTaskComplete OnlineTaskCompleteEvent;
+
+    // for other subscribers to know when the task is cancelled
+	UPROPERTY(BlueprintAssignable)
+	FS1_OnlineTaskComplete OnlineTaskCancelEvent;
+
+	UFUNCTION(BlueprintCallable)
+	void Cancel();
+
+	UFUNCTION(BlueprintCallable)
+	void SetId(FGuid Id);
+
+protected:
+	UFUNCTION(BlueprintImplementableEvent)
+	void PostCompleteTasks();
+
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+	FGuid TaskId;
+
+	virtual void OnTaskCompleted();
+
+	virtual void Cleanup();
+
+	virtual void OnTaskFail();
 };
                                     </code></pre>
 
-                                    <p>I was responsible for:</p>
-                                    <ul>
-                                        <li>Implementing grab interactions using Meta Interaction SDK</li>
-                                        <li>Implementing world canvas interactions using Meta Interaction SDK</li>
-                                        <li>Implementing step system and data representation to facilitate game flow</li>
-                                    </ul>
+                                    <p>The online tasks are written in C++, since Unreal does not expose global leaderboard reading to blueprints. The online task queue system itself is created in blueprints as it is not very complicated - tasks can be submitted to be queued, which returns a guid. Once the task fires off its completed delegate, it is removed from the queue and the next task is dequeued and started. The guid can be used to cancel any task in the queue that has not yet been started.</p>
 
-                                    <p>In future, this project can be further extended to contain more relevant experiences involving a stoma bag to be a more rounded experience.</p>
+                                    <p>A task queue that uses delegates to handle the queue was chosen over an async implementation (which Unreal's leaderboard blueprint nodes use) as async tasks run on Unreal's game thread and will not progress while the game is paused. Since leaderboard reads and writes are performed primarily while UI is open, it needs to be able to progress while the game thread is paused.</p>
+                                    
+                                    <p>Individual online tasks provide additional delegates to subscribe to that sends out whether the task succeeded and any information the task was meant to retrieve, allowing flexibility. As many online task types as required can be defined, and they can also be defined in blueprints for the ease of the design team.</p>
                                 </div>			
                             </div>
                         </section>
